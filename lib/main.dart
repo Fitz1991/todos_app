@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:todos_app/todo.dart';
-import 'todo_bloc.dart';
+import 'file:///C:/Users/dimka/AndroidStudioProjects/todos_app/lib/model/todo.dart';
+import 'block/todo_bloc.dart';
 
 void main() {
   runApp(MyApp());

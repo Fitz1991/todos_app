@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:rxdart/rxdart.dart';
-import 'package:todos_app/todo.dart';
+import 'file:///C:/Users/dimka/AndroidStudioProjects/todos_app/lib/model/todo.dart';
 import 'package:http/http.dart' as http;
 
 class TodoBlock{
