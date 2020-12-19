@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'block/todo_bloc.dart';
+import 'bloc/todo_bloc.dart';
 import 'model/todo.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyHomePage extends StatelessWidget {
 
   MyHomePage(this.title);
 
-  TodoBlock todoBlock = TodoBlock();
+  TodoBloc todoBloc = TodoBloc();
   List<Todo> _todos;
   ScrollController _scrollController = ScrollController();
 
@@ -67,13 +67,13 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    todoBlock.getTodos.add(pageNo);
+    todoBloc.getTodos.add(pageNo);
     _scrollController.addListener(() {
       if (_scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent) {
         if ((pageNo + 1) < maxPage) {
           pageNo++;
-          todoBlock.getTodos.add(pageNo);
+          todoBloc.getTodos.add(pageNo);
         }
       }
     });
@@ -84,7 +84,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Container(
           child: StreamBuilder(
-            stream: todoBlock.todosStream,
+            stream: todoBloc.todosStream,
             initialData: [],
             builder: (BuildContext context, snapshot) {
               if (snapshot.hasError) {

@@ -5,12 +5,12 @@ import 'package:rxdart/rxdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:todos_app/model/todo.dart';
 
-class TodoBlock{
+class TodoBloc{
   List<Todo> _todos = [];
 
   String apiUrl = 'https://jsonplaceholder.typicode.com/todos?_page=1&_limit=30';
 
-  TodoBlock(){
+  TodoBloc(){
     _actionController.stream.listen(_getTodos);
   }
 
